@@ -10,6 +10,7 @@ bool result = false;
 
 int size = 0;
 int score = 0;
+int essai = 0;
 
 void initGame();
 void weHaveAWinner();
@@ -39,6 +40,7 @@ int main(){
                 hiddenWord[i] = letterArray[i];
                 score = score + 1;
             }
+            
             cout << hiddenWord[i] ;
         }
         weHaveAWinner();
@@ -52,8 +54,14 @@ void initGame(){
 }
 
 void weHaveAWinner(){
+    essai = essai + 1;
     if(score == size){
         result = true;
         cout << endl << "FELICITATION !" << endl;
+    }else if (essai > 7)
+    {
+        result = true ;
+        cout << endl << "DOMMAGE !" << endl;
     }
+    
 }
