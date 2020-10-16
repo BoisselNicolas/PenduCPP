@@ -4,66 +4,56 @@ using namespace std;
 
 string inputWord;
 string inputLetter;
-int size = 0;
-int sizeTwo = 0;
 string str;
-bool inf = false;
+
 bool result = false;
-int indexSubstr = 0;
-int indexSubstrTwo = 1;
+
+int size = 0;
 int score = 0;
 
+void initGame();
+void weHaveAWinner();
 
 int main(){
 
-    cout << " Veuillez saisir un mot. " << endl ;
-    cin >> inputWord ;
-    cout << endl ;
-
-    size = inputWord.size();
-    size = size + 1;
-    sizeTwo = size - 1;
+    initGame();
 
     string letterArray[size];
     string hiddenWord[size];
-    
-    cout << endl;
 
-    for (size_t i = 0; i < sizeTwo; i++)
+    for (size_t i = 0; i < size; i++)
     {
         letterArray[i] = inputWord[i];
         hiddenWord[i] = "*";
         cout << hiddenWord[i];
     }
 
-    cout << endl;
-
     while(result == false){
-        inputLetter = "";
         
-        cout << "Choisissez une lettre :" ;
+        cout << endl << "Choisissez une lettre :" << endl ;
         cin >> inputLetter ;
-        cout << endl;
 
-        for (size_t i = 0; i < sizeTwo; i++)
+        for (size_t i = 0; i < size; i++)
         {
             if(letterArray[i] == inputLetter){
-                
                 hiddenWord[i] = letterArray[i];
                 score = score + 1;
-                
             }
-            
             cout << hiddenWord[i] ;
         }
-       cout << endl ;
-
-       if(score == sizeTwo)
-       {
-            result = true;
-        }
+        weHaveAWinner();
     }
-
-    cout << "FELICITATION !" << endl;
 }
 
+void initGame(){
+    cout << endl << "Veuillez saisir un mot. " << endl ;
+    cin >> inputWord ;
+    size = inputWord.size();
+}
+
+void weHaveAWinner(){
+    if(score == size){
+        result = true;
+        cout << endl << "FELICITATION !" << endl;
+    }
+}
