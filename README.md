@@ -6,6 +6,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
 
 [![Generic badge](https://img.shields.io/badge/For-Training-<green>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Only-Terminal-<green>.svg)](https://shields.io/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)]()
 
 
